@@ -57,9 +57,9 @@
     <instance objName="obj_car_spawner_down" x="150" y="16" name="inst_295F4337" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car_spawner_down" x="240" y="16" name="inst_778CA51C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car_spawner_down" x="340" y="16" name="inst_D0A7FB80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_car_spawner_up" x="440" y="736" name="inst_5FF54A0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_car_spawner_up" x="530" y="736" name="inst_62D60842" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_car_spawner_up" x="630" y="736" name="inst_DE4817EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_car_spawner_up" x="440" y="528" name="inst_5FF54A0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_car_spawner_up" x="530" y="528" name="inst_62D60842" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_car_spawner_up" x="630" y="528" name="inst_DE4817EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_draw_petrol" x="700" y="144" name="inst_7AC7882E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_draw_killed_people" x="840" y="48" name="inst_BDAEF01D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cars_line_left" x="100" y="560" name="inst_B216ADA7" locked="0" code="" scaleX="1" scaleY="6.5" colour="4294967295" rotation="0"/>

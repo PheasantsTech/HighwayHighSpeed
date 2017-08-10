@@ -145,15 +145,17 @@ var line_number = irandom(instance_number(obj_car_spawner_up));
 var line_spawner;
 var hh = sprite_height / 2;
 
+base_speed = ( 2 * ( line_number + 1) );
+
 if ( car_dir == 1 ) { // Direction up
     line_spawner = instance_find(obj_car_spawner_up, line_number);
-    //y = room_height + hh;
-    y = 0 - abs(hh);
-    base_speed = (-1 * (2 * (instance_number(obj_car_spawner_up) - line_number))) - (7 * 0.8);   // 7 is default background_vspeed[0]
+    y = room_height + hh;
+    y = 0 - abs(hh) * 1.1;
+    base_speed -= 7 * 0.9;
+    base_speed = min(-1, base_speed);
 } else { // Direction down
     line_spawner = instance_find(obj_car_spawner_down, line_number);
-    base_speed = ( 2 * ( line_number + 1) );
-    y = 0 - abs(hh);
+    y = 0 - abs(hh) * 1.1;
 }
 x = line_spawner.x;
 </string>
@@ -162,73 +164,30 @@ x = line_spawner.x;
       </action>
       <action>
         <libid>1</libid>
-        <id>403</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>-1</isquestion>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>obj_car</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>/// Die if there is an object on posssition
+var wh = sprite_width / 2;
+var hh = sprite_height / 2;
+var inst = collision_rectangle(x - wh, y - hh, x + wh, y + hh, obj_crashable, false, true);
+if inst != noone and inst.id != id {
+ instance_destroy();
+}
+</string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
