@@ -181,6 +181,10 @@ x = line_spawner.x;
             <string>/// Die if there is an object on posssition
 var wh = sprite_width / 2;
 var hh = sprite_height / 2;
+
+hh *= 1.2;
+wh *= 1.2;
+
 var inst = collision_rectangle(x - wh, y - hh, x + wh, y + hh, obj_crashable, false, true);
 if inst != noone and inst.id != id {
  instance_destroy();

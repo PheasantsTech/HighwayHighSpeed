@@ -30,4 +30,14 @@ m[? 'price'] = 0;
 m[? 'sprite'] = spr_player_truck;
 car_info[? 'BEER TRUCK'] = m;
 
+m = ds_map_create();
+m[? 'name'] = "Space-Pirate ship";
+m[? 'desc'] = "Aggggrrrrrr";
+m[? 'spec'] = "Firrrreeeee";
+m[? 'own'] = true;
+m[? 'price'] = 0;
+m[? 'sprite'] = spr_player_pirate;
+car_info[? 'PIRATE'] = m;
+
+
 

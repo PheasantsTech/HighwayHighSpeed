@@ -1,4 +1,4 @@
-# Parts developed by someone other than me
+# Parts developed by someone other than our developer team
 
 - [heli animated](https://opengameart.org/content/heli-animated) - [ruberboy](https://opengameart.org/users/ruberboy)
 - [police siren](https://freesound.org/people/vlammenos/sounds/52906/) - [vlammenos](https://freesound.org/people/vlammenos/)
@@ -20,6 +20,9 @@
 - [bomb sprite](https://opengameart.org/content/bomb-0) by [truezipp](https://opengameart.org/users/truezipp)
 - [garage background](https://pixabay.com/cs/m%C3%ADsto-pr%C3%A1zdn%C3%BD-gar%C3%A1%C5%BE-kamenn%C3%A1-podlaha-2519839/)
 - [beer](https://pixabay.com/cs/pivo-d%C5%BEb%C3%A1nek-jar-n%C4%9Bmecko-drink-152021/)
+- [cannon sound](https://freesound.org/people/Isaac200000/sounds/184650/)
+- [truck sprite](https://www.unluckystudio.com) by UnLuckY Studio
+- [pirate fruits](https://opengameart.org/content/fruits-0)
 
 
 # Music

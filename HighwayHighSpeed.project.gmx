@@ -51,6 +51,17 @@
     <sound>sound\sound_engine_takeoff</sound>
     <sound>sound\sound_mask</sound>
     <sound>sound\sound_hmm_beer</sound>
+    <sound>sound\snd_cannon</sound>
+    <sounds name="pirate">
+      <sound>sound\snd_pir1</sound>
+      <sound>sound\snd_pir2</sound>
+      <sound>sound\snd_pir3</sound>
+      <sound>sound\snd_pir4</sound>
+      <sound>sound\snd_pir5</sound>
+      <sound>sound\snd_pir6</sound>
+      <sound>sound\snd_pir7</sound>
+      <sound>sound\snd_pir8</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="achievements">
@@ -93,6 +104,7 @@
     </sprites>
     <sprites name="steering_wheels">
       <sprite>sprites\spr_steering_wheel</sprite>
+      <sprite>sprites\spr_steering_helm</sprite>
       <sprite>sprites\spr_steering_cool</sprite>
       <sprite>sprites\spr_touchpad</sprite>
     </sprites>
@@ -109,6 +121,7 @@
     <sprite>sprites\spr_star</sprite>
     <sprite>sprites\spr_oil_pot</sprite>
     <sprite>sprites\spr_shader</sprite>
+    <sprite>sprites\spr_cannonball</sprite>
     <sprite>sprites\shader_police</sprite>
     <sprite>sprites\spr_padd</sprite>
     <sprite>sprites\spr_top_score_line</sprite>
@@ -124,10 +137,13 @@
       <sprite>sprites\spr_player_delorian_dead</sprite>
       <sprite>sprites\spr_player_truck</sprite>
       <sprite>sprites\spr_player_truck_dead</sprite>
+      <sprite>sprites\spr_player_pirate</sprite>
+      <sprite>sprites\spr_player_pirate_dead</sprite>
     </sprites>
     <sprites name="gas">
       <sprite>sprites\spr_gas_future</sprite>
       <sprite>sprites\spr_gas</sprite>
+      <sprite>sprites\spr_fruits</sprite>
       <sprite>sprites\spr_plutonium</sprite>
     </sprites>
     <sprites name="room_garage">
@@ -292,6 +308,7 @@
     <objects name="room_achievements">
       <object>objects\obj_scroller</object>
     </objects>
+    <object>objects\obj_cannon_ball</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room__init__</room>

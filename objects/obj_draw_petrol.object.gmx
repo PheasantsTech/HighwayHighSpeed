@@ -90,6 +90,9 @@ switch obj_player.car_type {
     case "BEER TRUCK":
         petrol_str = "Drunkenness: ";
         break;
+    case "PIRATE":
+        petrol_str = "Vitamin C: ";
+        break;
     default:
         petrol_str = "Petrol: ";
         break;

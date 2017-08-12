@@ -572,6 +572,11 @@ switch car_type {
         skinset = "CLASSIC";
         music_start(sound_music_clunky_old_time_piano);
         break;
+    case "PIRATE":
+        skinset = "FUTURE";
+        music_start(sound_music_insane_gameplay);
+        obj_touchpad.sprite_index = spr_steering_helm;
+        break;
 }
 
 switch skinset {

@@ -266,6 +266,91 @@ audio_play_sound_on(aem, sound_car_start, false, 40);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Do things based on car type
+if car_type == "PIRATE" {
+    pirate_tick = 0;
+    pirate_cannon = 0;
+    pirate_cannon_salve = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Firrrrrrreeee!
+
+if pirate_cannon = 0 {
+    exit;
+}
+
+var dys;
+dys[1] = 58 - 64;
+dys[2] = 74 - 64;
+dys[3] = 88 - 64;
+
+var dx = 32 - 6;
+
+var cannon_ball_speed = 20;
+
+var tx = x + (sign(pirate_cannon) * dx);
+var ty = y + dys[abs(pirate_cannon)];
+var inst = instance_create(tx, ty, obj_cannon_ball);
+inst.hspeed = sign(pirate_cannon) * cannon_ball_speed;
+inst.image_xscale = sign(pirate_cannon) * -1;
+effect_create_below(ef_spark, tx, ty, 1, c_white);
+audio_play_sound_at(snd_cannon, tx, ty, 0, 0, 100, room_height, false, 50);
+camera_shake(10, 4);
+
+
+if ((pirate_cannon &gt; 0) or (abs(pirate_cannon) &lt; (array_length_1d(dys) - 1))) {
+    if pirate_cannon &gt; 0 then pirate_cannon *= -1;
+    else pirate_cannon = abs(pirate_cannon) + 1;
+    alarm[4] = 4;
+} else if pirate_cannon_salve &lt; 3 {
+    pirate_cannon_salve ++;
+    pirate_cannon = 1;
+    alarm[4] = 20;
+} else {
+    pirate_cannon = 0;
+    pirate_cannon_salve = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -657,6 +742,42 @@ if ( repel_radius &gt; 0 ) {
             <kind>1</kind>
             <string>/// Game won? Fireworks!
 if game_won then effect_create_above(ef_firework, random(room_width), random(room_height), choose(0, 1, 2), make_colour_hsv(random(255), 255, 255));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Pirate ships flares
+globalvar petrol;
+if car_type == "PIRATE" and petrol &gt; 0 and !dead {
+    var dx = 22;
+    var hh = sprite_height / 2;
+    var dy = y + hh;
+    
+    for (var i = 0; i &lt; pirate_tick; i ++){
+        var dyt = dy + (i * 4);
+        effect_create_below(ef_flare, x + dx, dyt, 0, c_yellow);
+        effect_create_below(ef_flare, x - dx, dyt, 0, c_yellow);
+    }
+}
+pirate_tick++;
+
+if pirate_tick &gt; 5 then pirate_tick = 0;
 </string>
           </argument>
         </arguments>
@@ -1780,6 +1901,33 @@ draw_line( x3, y3, x4, y4); // Down line
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Firreeee
+var snd = audio_play_sound(choose(snd_pir1, snd_pir2, snd_pir3, snd_pir4, snd_pir5, snd_pir6, snd_pir7, snd_pir8), 40, false);
+pirate_cannon = 1;
+alarm[4] = 1 * room_speed;
+
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
