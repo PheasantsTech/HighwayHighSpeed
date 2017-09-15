@@ -340,6 +340,7 @@ if car != noone { // We just got crashed
     if dead then return noone;
     if object_index == obj_player and (not dead or not other.dead) {
         if other.object_index == obj_ambulance then return noone;  // ambulance shall not hurt us
+        else if other.object_index == obj_moneycar then return noone;  // moneycar shall not hurt us
         camera_shake(10, room_speed * 0.5);
         if cars_left &lt;= 0 { // this was our last car :-(
             music_stop();  // minute of silnce for our dear friend
@@ -354,6 +355,8 @@ if car != noone { // We just got crashed
     vspeed = background_vspeed[0];
     wanted_level += 1 / (1 + wanted_level);
 } else { // No, just side hit. Repel myself.
+    if other.object_index == obj_ambulance then return noone;  // ambulance shall not hurt us
+    else if other.object_index == obj_moneycar then return noone;  // moneycar shall not hurt us
     if ( other.hspeed != 0 and object_index != obj_police ) {
         x += other.hspeed * 2;
         image_angle = other.image_angle;
