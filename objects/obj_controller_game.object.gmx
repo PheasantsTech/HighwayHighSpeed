@@ -57,6 +57,30 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>paused</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="6">
       <action>
@@ -347,8 +371,6 @@ if (global.slowmo_shader == noone) then for (var i = 0; i &lt; 2; i++) if(irando
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -365,12 +387,26 @@ if (global.slowmo_shader == noone) then for (var i = 0; i &lt; 2; i++) if(irando
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Music stop
-music_stop()
+            <string>/// Check for pause change
+globalvar game_paused;
+
+if (not game_paused) and os_is_paused(){
+    game_paused = true;
+    music_pause();
+    screen_save("pause.pic");
+    room_persistent = true;
+    room_goto(room_paused);
+} else if game_paused {
+    room_persistent = false;
+    music_restart();
+    game_paused = false;
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -437,6 +473,28 @@ achievements_vars[? 'total_distance'] += distance;
       </action>
     </event>
     <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Game was paused? Exit this event and keep current state
+if global.game_paused then exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

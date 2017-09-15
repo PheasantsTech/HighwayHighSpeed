@@ -211,6 +211,9 @@
     <scripts name="music">
       <script>scripts\music_start.gml</script>
       <script>scripts\music_stop.gml</script>
+      <script>scripts\music_restart.gml</script>
+      <script>scripts\music_pause.gml</script>
+      <script>scripts\music_resume.gml</script>
     </scripts>
     <script>scripts\sprite_create_button.gml</script>
     <script>scripts\instance_explode.gml</script>
@@ -229,20 +232,16 @@
     <font>fonts\font_garage_title</font>
     <font>fonts\font_garage_text</font>
     <font>fonts\font_trophies_text</font>
+    <font>fonts\font_room_paused</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <object>objects\obj_car</object>
-    <object>objects\obj_police</object>
-    <object>objects\obj_ambulance</object>
-    <object>objects\obj_gas</object>
-    <object>objects\obj_controller_game</object>
-    <object>objects\obj_controller_tutorial</object>
-    <object>objects\obj_controller_start</object>
-    <object>objects\obj_controller_trophies</object>
-    <object>objects\obj_crashable</object>
-    <object>objects\obj_car_spawner_up</object>
-    <object>objects\obj_car_spawner_down</object>
+    <objects name="controllers">
+      <object>objects\obj_controller_game</object>
+      <object>objects\obj_controller_tutorial</object>
+      <object>objects\obj_controller_start</object>
+      <object>objects\obj_controller_trophies</object>
+      <object>objects\obj_controller_pause</object>
+    </objects>
     <objects name="GUI">
       <objects name="button">
         <object>objects\obj_btn_feedback</object>
@@ -278,6 +277,30 @@
       <object>objects\obj_touchpad</object>
       <object>objects\obj_endgame_scroll</object>
     </objects>
+    <objects name="effect">
+      <object>objects\obj_effect_camera_shake</object>
+      <object>objects\obj_effect_teleport</object>
+      <object>objects\obj_effect_shader</object>
+      <object>objects\obj_effect_police</object>
+    </objects>
+    <objects name="room_garage">
+      <object>objects\obj_garage_car</object>
+      <object>objects\obj_garage_info</object>
+      <object>objects\obj_garage_arrow_prev</object>
+      <object>objects\obj_garage_arrow_next</object>
+      <object>objects\obj_garage_btn_select</object>
+    </objects>
+    <objects name="room_achievements">
+      <object>objects\obj_scroller</object>
+    </objects>
+    <object>objects\obj_player</object>
+    <object>objects\obj_car</object>
+    <object>objects\obj_police</object>
+    <object>objects\obj_ambulance</object>
+    <object>objects\obj_gas</object>
+    <object>objects\obj_crashable</object>
+    <object>objects\obj_car_spawner_up</object>
+    <object>objects\obj_car_spawner_down</object>
     <object>objects\cars_line_left</object>
     <object>objects\cars_line_right</object>
     <object>objects\obj_oil_pot</object>
@@ -286,28 +309,12 @@
     <object>objects\obj_heli</object>
     <object>objects\obj_ingame_message</object>
     <object>objects\obj_paint_achivement</object>
-    <objects name="effect">
-      <object>objects\obj_effect_camera_shake</object>
-      <object>objects\obj_effect_teleport</object>
-      <object>objects\obj_effect_shader</object>
-      <object>objects\obj_effect_police</object>
-    </objects>
     <object>objects\obj_touchscreen_mover</object>
     <object>objects\obj_top_score_line</object>
     <object>objects\obj__init__</object>
     <object>objects\obj_player_main_menu</object>
     <object>objects\obj_bomb</object>
-    <objects name="room_garage">
-      <object>objects\obj_garage_car</object>
-      <object>objects\obj_garage_info</object>
-      <object>objects\obj_garage_arrow_prev</object>
-      <object>objects\obj_garage_arrow_next</object>
-      <object>objects\obj_garage_btn_select</object>
-    </objects>
     <object>objects\obj_save_game</object>
-    <objects name="room_achievements">
-      <object>objects\obj_scroller</object>
-    </objects>
     <object>objects\obj_cannon_ball</object>
   </objects>
   <rooms name="rooms">
@@ -317,6 +324,7 @@
     <room>rooms\room_tutorial_future</room>
     <room>rooms\room_achivements</room>
     <room>rooms\room_garage</room>
+    <room>rooms\room_paused</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

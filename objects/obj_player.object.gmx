@@ -312,7 +312,7 @@ if car_type == "PIRATE" {
             <kind>1</kind>
             <string>/// Firrrrrrreeee!
 
-if pirate_cannon = 0 {
+if pirate_cannon = 0 or dead {
     exit;
 }
 
@@ -774,10 +774,11 @@ if car_type == "PIRATE" and petrol &gt; 0 and !dead {
         effect_create_below(ef_flare, x + dx, dyt, 0, c_yellow);
         effect_create_below(ef_flare, x - dx, dyt, 0, c_yellow);
     }
-}
-pirate_tick++;
+    
+    pirate_tick++;
 
-if pirate_tick &gt; 5 then pirate_tick = 0;
+    if pirate_tick &gt; 5 then pirate_tick = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -1661,12 +1662,13 @@ obj_btn_repel.snd_humm = audio_play_sound_on(aem, sound_shields_powered, true, 3
           <argument>
             <kind>1</kind>
             <string>///EXPLODE
+if instance_number(obj_endgame_scroll) == 0 {
 music_start(sound_music_a_sad_goodbye);
 effect_create_above(ef_explosion, x, room_height, 2, make_colour_rgb(255,244,0));
 audio_play_sound(sound_explosion, 100, false);
 image_xscale = 0;
 instance_create(0, 0, obj_endgame_scroll);
-
+}
 </string>
           </argument>
         </arguments>
@@ -1903,7 +1905,7 @@ draw_line( x3, y3, x4, y4); // Down line
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="9" enumb="32">
+    <event eventtype="9" enumb="80">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1920,11 +1922,10 @@ draw_line( x3, y3, x4, y4); // Down line
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Firreeee
-var snd = audio_play_sound(choose(snd_pir1, snd_pir2, snd_pir3, snd_pir4, snd_pir5, snd_pir6, snd_pir7, snd_pir8), 40, false);
-pirate_cannon = 1;
-alarm[4] = 1 * room_speed;
-
+            <string>/// PAUSE game
+game_save("pause.dat");
+screen_save("pause.pic");
+room_goto(room_paused);
 </string>
           </argument>
         </arguments>

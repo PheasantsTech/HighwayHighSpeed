@@ -141,7 +141,7 @@ image_index = irandom(sprite_get_number(sprite_index));
           <argument>
             <kind>1</kind>
             <string>///Move to the random line and set speed
-var line_number = irandom(instance_number(obj_car_spawner_up));
+var line_number = floor(random(instance_number(obj_car_spawner_up)));
 var line_spawner;
 var hh = sprite_height / 2;
 
@@ -157,6 +157,7 @@ if ( car_dir == 1 ) { // Direction up
     line_spawner = instance_find(obj_car_spawner_down, line_number);
     y = 0 - abs(hh) * 1.1;
 }
+
 x = line_spawner.x;
 </string>
           </argument>
@@ -188,6 +189,7 @@ wh *= 1.2;
 var inst = collision_rectangle(x - wh, y - hh, x + wh, y + hh, obj_crashable, false, true);
 if inst != noone and inst.id != id {
  instance_destroy();
+ exit;
 }
 </string>
           </argument>

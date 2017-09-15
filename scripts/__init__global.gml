@@ -1,5 +1,6 @@
 globalvar petrol, petrol_max, cars_left, distance, cars_killed, wanted_level, wanted_level_max, music_enabled, debug, save_file, disable_power_buttons;
-globalvar slowmo_shader, info_message, queue_info_messages, music_current, disable_cars_and_petrol, skinset;
+globalvar slowmo_shader, info_message, queue_info_messages, music_current, music_current_index, disable_cars_and_petrol, skinset;
+globalvar game_paused;
 
 petrol = 0;
 petrol_max = 1000;
@@ -17,7 +18,9 @@ achievements = ds_map_create();
 info_message = noone;
 queue_info_messages = ds_list_create();
 music_current = noone;
+music_current_index = noone;
 skinset = "FUTURE"; // Known skinsets: FUTURE, CLASSIC
+game_paused = false;
 
 if not debug then save_file = "saved.dat";
 else save_file = "saved_debug.dat";
