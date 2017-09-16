@@ -11,7 +11,9 @@ if (is_undefined(achievement_data)) {
 var d = json_decode(achievement_data);
 
 var inst = instance_create(argument0, argument1, obj_paint_achivement);
-inst.icon = d[? 'icon'];
+// var icon = d[? 'icon'];
+var icon = achievement_get_icon(argument2);  // obtain icon from script rather than from saved data
+inst.icon = icon;
 inst.subject = argument2;
 inst.text = d[? 'description'];
 inst.create_sprite = true;

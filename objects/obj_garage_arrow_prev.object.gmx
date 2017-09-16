@@ -58,6 +58,7 @@ with obj_garage_car event_user(0);
 with obj_garage_info event_user(0);
 with obj_garage_arrow_prev event_user(0);
 with obj_garage_arrow_next event_user(0);
+with obj_garage_btn_select event_user(0);
 </string>
           </argument>
         </arguments>

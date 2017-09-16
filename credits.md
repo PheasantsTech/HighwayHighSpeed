@@ -23,6 +23,13 @@
 - [cannon sound](https://freesound.org/people/Isaac200000/sounds/184650/)
 - [truck sprite](https://www.unluckystudio.com) by UnLuckY Studio
 - [pirate fruits](https://opengameart.org/content/fruits-0)
+- [Cha Ching Register Sound](http://soundbible.com/1997-Cha-Ching-Register.html) (shortened) by Muska666 under [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+- [spinning coin](https://opengameart.org/content/spinning-coin) by JM.Atenci under [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+- [money car crash sound](https://freesound.org/people/RandomationPictures/sounds/138491/)
+- [coin click sound](http://soundbible.com/1950-Button-Push.html) by Mike Koenig under [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+- [yaay sound](http://soundbible.com/2103-1-Person-Cheering.html) by Jett Rifkin under [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+- [buy car lock](https://pixabay.com/cs/kl%C3%AD%C4%8D-kl%C3%AD%C4%8De-z%C3%A1mek-pad-lock-bezpe%C4%8Dn%C3%A9-2028593/)
+- [click error](http://soundbible.com/1540-Computer-Error-Alert.html) by Mike Koenig under [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 
 # Music

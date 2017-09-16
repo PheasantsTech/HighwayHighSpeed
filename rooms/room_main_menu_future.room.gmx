@@ -63,7 +63,7 @@
     <instance objName="obj_car_spawner_up" x="540" y="224" name="inst_F58571F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car_spawner_up" x="620" y="192" name="inst_DD686CF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_main_menu" x="480" y="368" name="inst_E587F85C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_btn_feedback" x="0" y="352" name="inst_B12A5418" locked="0" code="" scaleX="0.731707334518433" scaleY="1.47761189937592" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gui_money" x="300" y="256" name="inst_000C94F5" locked="0" code="" scaleX="2" scaleY="1.95454549789429" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="img_game_name" x="40" y="16" w="996" h="282" xo="0" yo="0" id="10000002" name="inst_9845C3B2" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -784,6 +784,106 @@ if car_type == "PIRATE" and petrol &gt; 0 and !dead {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_gas">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>dead</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>425</id>
+        <kind>4</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.petrol</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>min(global.petrol_max,global.petrol+400)</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play sound
+switch obj_player.car_type {
+    case "BEER TRUCK":
+        audio_play_sound(sound_hmm_beer, 50, false);
+        break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_controller_game">
       <action>
         <libid>1</libid>
@@ -912,106 +1012,6 @@ if car_type == "PIRATE" and petrol &gt; 0 and !dead {
           <argument>
             <kind>0</kind>
             <string>true</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_gas">
-      <action>
-        <libid>1</libid>
-        <id>408</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>dead</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>425</id>
-        <kind>4</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.petrol</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>min(global.petrol_max,global.petrol+400)</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>other</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Play sound
-switch obj_player.car_type {
-    case "BEER TRUCK":
-        audio_play_sound(sound_hmm_beer, 50, false);
-        break;
-}
-</string>
           </argument>
         </arguments>
       </action>
@@ -1905,7 +1905,7 @@ draw_line( x3, y3, x4, y4); // Down line
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="9" enumb="80">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1922,10 +1922,7 @@ draw_line( x3, y3, x4, y4); // Down line
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// PAUSE game
-game_save("pause.dat");
-screen_save("pause.pic");
-room_goto(room_paused);
+            <string>instance_create(-1000, -1000, obj_moneycar);
 </string>
           </argument>
         </arguments>

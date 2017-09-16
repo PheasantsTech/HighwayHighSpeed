@@ -2,6 +2,8 @@ globalvar petrol, petrol_max, cars_left, distance, cars_killed, wanted_level, wa
 globalvar slowmo_shader, info_message, queue_info_messages, music_current, music_current_index, disable_cars_and_petrol, skinset;
 globalvar game_paused;
 
+debug = true;
+
 petrol = 0;
 petrol_max = 1000;
 cars_left = 0;
@@ -10,7 +12,6 @@ cars_killed = 0;
 wanted_level = 0;
 wanted_level_max = 5;
 music_enabled = true;
-debug = false;
 disable_cars_and_petrol = false;
 disable_power_buttons = false;
 slowmo_shader = noone;
@@ -22,8 +23,7 @@ music_current_index = noone;
 skinset = "FUTURE"; // Known skinsets: FUTURE, CLASSIC
 game_paused = false;
 
-if not debug then save_file = "saved.dat";
-else save_file = "saved_debug.dat";
+save_file = "saved.dat";
 
 __init__last_words();
 __init__top_score_messages();

@@ -50,7 +50,10 @@
     <sound>sound\sound_hallelujah</sound>
     <sound>sound\sound_engine_takeoff</sound>
     <sound>sound\sound_mask</sound>
+    <sound>sound\sound_cash</sound>
     <sound>sound\sound_hmm_beer</sound>
+    <sound>sound\sound_yaay</sound>
+    <sound>sound\sound_moneycar_crash</sound>
     <sound>sound\snd_cannon</sound>
     <sounds name="pirate">
       <sound>sound\snd_pir1</sound>
@@ -62,6 +65,8 @@
       <sound>sound\snd_pir7</sound>
       <sound>sound\snd_pir8</sound>
     </sounds>
+    <sound>sound\sound_coin_click</sound>
+    <sound>sound\sound_click_fail</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="achievements">
@@ -80,6 +85,8 @@
       <sprite>sprites\spr_helicopter_police</sprite>
       <sprite>sprites\spr_ambulance</sprite>
       <sprite>sprites\spr_ambulance_dead</sprite>
+      <sprite>sprites\spr_moneycar</sprite>
+      <sprite>sprites\sprite70</sprite>
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="skins_future">
@@ -129,6 +136,8 @@
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_button_exit</sprite>
     <sprite>sprites\spr_btn_select</sprite>
+    <sprite>sprites\spr_btn_buy</sprite>
+    <sprite>sprites\sprite73</sprite>
     <sprite>sprites\spr_btn_feedback</sprite>
     <sprite>sprites\spr_btn_skik_tutorial</sprite>
     <sprite>sprites\spr_btn_main_menu</sprite>
@@ -149,7 +158,9 @@
     <sprites name="room_garage">
       <sprite>sprites\spr_car_info</sprite>
       <sprite>sprites\spr_arrow</sprite>
+      <sprite>sprites\spr_lock</sprite>
     </sprites>
+    <sprite>sprites\spr_coin</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -217,6 +228,10 @@
     </scripts>
     <script>scripts\sprite_create_button.gml</script>
     <script>scripts\instance_explode.gml</script>
+    <scripts name="list_map_convertor">
+      <script>scripts\ds_list_to_map.gml</script>
+      <script>scripts\ds_map_to_list.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_small</font>
@@ -233,6 +248,8 @@
     <font>fonts\font_garage_text</font>
     <font>fonts\font_trophies_text</font>
     <font>fonts\font_room_paused</font>
+    <font>fonts\font_mainmenu_cash</font>
+    <font>fonts\font_btn_buy</font>
   </fonts>
   <objects name="objects">
     <objects name="controllers">
@@ -276,6 +293,7 @@
       <object>objects\obj_padd</object>
       <object>objects\obj_touchpad</object>
       <object>objects\obj_endgame_scroll</object>
+      <object>objects\obj_gui_money</object>
     </objects>
     <objects name="effect">
       <object>objects\obj_effect_camera_shake</object>
@@ -297,6 +315,8 @@
     <object>objects\obj_car</object>
     <object>objects\obj_police</object>
     <object>objects\obj_ambulance</object>
+    <object>objects\obj_moneycar</object>
+    <object>objects\obj_moneycar_coin</object>
     <object>objects\obj_gas</object>
     <object>objects\obj_crashable</object>
     <object>objects\obj_car_spawner_up</object>

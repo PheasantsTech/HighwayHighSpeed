@@ -8,6 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Event user 0
+event_user(0);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -25,29 +49,98 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Select car type
-global.achievements_vars[? 'car_type'] = obj_garage_car.curr_car;
+            <string>/// Select or buy car type
+globalvar achievements_vars, car_info;
+
+if not car_owned {
+    if car_price &gt; achievements_vars[? 'cash'] {
+        audio_play_sound(sound_click_fail, 50, false);
+        exit;
+    }
+    var car_type = obj_garage_car.curr_car;
+    var car_data = car_info[? car_type];
+    car_data[? 'owned'] = true;
+    achievements_vars[? 'cash'] -= car_price;
+    audio_play_sound(sound_cash, 50, false);
+    event_user(0);
+} else {
+    achievements_vars[? 'car_type'] = obj_garage_car.curr_car;
+    room_goto(room_main_menu_future);
+}
+
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>11</kind>
-            <room>room_main_menu_future</room>
+            <kind>1</kind>
+            <string>/// Check if car is owned
+globalvar car_info;
+var car_type = obj_garage_car.curr_car;
+car_owned = car_info[? car_type];
+car_price = car_owned[? "price"];
+car_owned = car_owned[? "owned"];
+
+if car_owned then sprite_index = spr_btn_select;
+else sprite_index = spr_btn_buy;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// If car is not owned, draw lock over it
+globalvar achievements_vars;
+if not car_owned {
+    var draw_x = obj_garage_info.x + (obj_garage_info.sprite_width / 2);
+    var draw_y = obj_garage_info.y + (obj_garage_info.sprite_height / 2);
+    
+    var player_cash = achievements_vars[? 'cash'];
+    
+    draw_sprite(spr_lock, 0, draw_x, draw_y);
+    
+    if player_cash &lt; car_price then draw_set_color(c_red);
+    else draw_set_color(c_yellow);
+    
+    draw_set_font(font_btn_buy);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    var text = "Price: " + string(car_price);
+    draw_text(x + (sprite_width / 2), y + (sprite_height / 2), text);
+}
+</string>
           </argument>
         </arguments>
       </action>

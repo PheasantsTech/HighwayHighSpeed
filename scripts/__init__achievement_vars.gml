@@ -10,3 +10,4 @@ achievements_vars[? 'first_run'] = true;
 achievements_vars[? 'total_distance'] = 0;
 achievements_vars[? 'seconds_played'] = 0;
 achievements_vars[? 'car_type'] = "SPEEDER 5000";
+achievements_vars[? 'cash'] = 0;
