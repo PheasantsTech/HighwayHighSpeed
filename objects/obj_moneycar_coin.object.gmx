@@ -53,6 +53,46 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text_enabled</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -95,13 +135,47 @@ move_towards_point(0.15 * room_width, -1.1 * sprite_height, 12);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// If on the upper side of screen -&gt; play sound, add user's cash and die
+            <string>/// If on the upper side of screen -&gt; play sound, add user's cash, enable draw and die after some time
 globalvar achievements_vars;
 if y &lt; 0 {
     if not audio_is_playing(sound_cash) then audio_play_sound(sound_cash, 50, false);
-    instance_destroy();
     achievements_vars[? 'cash'] += 1;
+    draw_text_enabled = true;
+    alarm[1] = room_speed * 1.5;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw current money if enabled
+if not draw_text_enabled then exit;
+
+globalvar achievements_vars;
+
+draw_set_valign(fa_top);
+draw_set_halign(fa_center);
+draw_set_font(font_mainmenu_cash);
+draw_set_color(c_yellow);
+
+draw_text(0.15 * room_width, 0, string(achievements_vars[? 'cash']));
 </string>
           </argument>
         </arguments>
