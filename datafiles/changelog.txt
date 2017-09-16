@@ -1,0 +1,10 @@
+Changelog
+====Version 1.1=====
+16/09/17
+- added cash system & bank car
+- added new playable car (or ship?)
+- added cheat codes (really overpowered)
+- bugfixes (no more weird rotation when hitting ambulance)
+
+====Version 1.0=====
+3 cars, fun for everyone

@@ -3,7 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles"/>
+  <datafiles number="2" name="datafiles">
+    <datafile>
+      <name>changelog.txt</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>changelog.txt</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\horn</sound>
@@ -236,6 +254,7 @@
       <script>scripts\ds_list_to_map.gml</script>
       <script>scripts\ds_map_to_list.gml</script>
     </scripts>
+    <script>scripts\file_text_read_whole.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_small</font>

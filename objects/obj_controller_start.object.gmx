@@ -154,12 +154,16 @@ music_start(sound_music_cool_adventure_info);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Check first run
-globalvar achievements_vars;
+            <string>/// Check first run and changelog
+globalvar achievements_vars, game_version;
+
 
 if achievements_vars[? 'first_run'] {
     alarm[0] = room_speed;
     http_get("https://adamhlavacek.com/hhs.php");
+} else if achievements_vars[? 'game_version'] != game_version {
+    achievements_vars[? 'game_version'] = game_version;
+    show_message_async(file_text_read_whole("changelog.txt"));
 }
 </string>
           </argument>

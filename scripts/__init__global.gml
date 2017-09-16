@@ -1,8 +1,10 @@
 globalvar petrol, petrol_max, cars_left, distance, cars_killed, wanted_level, wanted_level_max, music_enabled, debug, save_file, disable_power_buttons;
 globalvar slowmo_shader, info_message, queue_info_messages, music_current, music_current_index, disable_cars_and_petrol, skinset, explosive_touch;
-globalvar game_paused;
+globalvar game_paused, game_version;
 
 debug = false;
+
+game_version = 1.1;
 
 petrol = 0;
 petrol_max = 1000;

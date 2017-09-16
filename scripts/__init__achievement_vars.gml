@@ -14,3 +14,4 @@ achievements_vars[? 'cash'] = 0;
 achievements_vars[? 'cheating_warning'] = false;  // user was warned about cheating
 achievements_vars[? 'cheat_used'] = 0;  // did user already cheated?
 achievements_vars[? 'cheat_42'] = false;  // cheat 42
+achievements_vars[? 'game_version'] = 0;

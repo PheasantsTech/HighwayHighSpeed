@@ -1,3 +1,9 @@
+# Our developer team
+
+[Adam Hlaváček](http://adamhlavacek.com/) - code & ideas
+
+Tomáš Hlaváček - art director (except textures that ones created by someone else)
+
 # Parts developed by someone other than our developer team
 
 - [heli animated](https://opengameart.org/content/heli-animated) - [ruberboy](https://opengameart.org/users/ruberboy)
