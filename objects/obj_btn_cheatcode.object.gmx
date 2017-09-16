@@ -123,6 +123,7 @@ switch cheatcode {
         global.autoshield = true;
         show_message("AI just got slightly smarter");
         break;
+    case ";":
     case "error":
         var max_i = irandom(60) + 10;
         for(var i = 0; i &lt; max_i; i++){

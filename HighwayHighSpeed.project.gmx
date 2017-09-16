@@ -88,7 +88,7 @@
       <sprite>sprites\spr_ambulance</sprite>
       <sprite>sprites\spr_ambulance_dead</sprite>
       <sprite>sprites\spr_moneycar</sprite>
-      <sprite>sprites\sprite70</sprite>
+      <sprite>sprites\spr_moneycar_dead</sprite>
       <sprite>sprites\spr_bomb</sprite>
     </sprites>
     <sprites name="skins_future">

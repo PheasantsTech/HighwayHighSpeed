@@ -308,6 +308,29 @@ _stage_7_4_cars_left_last = global.cars_left;
       </action>
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stage 7.7 vars
+globalvar achievements_vars;
+_stage_7_7_cash_last = achievements_vars[? 'cash'];
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>611</id>
         <kind>6</kind>
         <userelative>-1</userelative>
@@ -507,7 +530,17 @@ if ((stage == 0) and ((tick / room_speed) &gt;= 5)) {
     instance_create(-1000, 0, obj_ambulance);
     stage = 7.4;
     tick = 0;
-}  else if ((stage == 7.5) and ((tick / room_speed) &gt;= 2)) {
+}   else if ((stage == 7.5) and (info_message_completed(last_message))) {
+    last_message = show_info_message(spr_tutorial_ach_info, "Culbert", 
+    "Hey! Look! A car from bank! I don't know about you, but I would use some extra money. Full speed ahead!", 15);
+    stage = 7.6;
+    tick = 0;
+} else if ((stage == 7.6) and (info_message_completed(last_message))) {
+    slowmo_disable();
+    instance_create(-1000, 0, obj_moneycar);
+    stage = 7.7;
+    tick = 0;
+}  else if ((stage == 7.9) and ((tick / room_speed) &gt;= 2)) {
     slowmo_enable();
     last_message = show_info_message(spr_tutorial_ach_info, "Culbert", 
     "Oh no, you alerted the cops! Dont worry though, I will learn you how to handle this.", 15);
@@ -731,6 +764,33 @@ if _stage_7_4_cars_left_last &lt; cars_left then stage = 7.5;
 else _stage_7_4_cars_left_last = cars_left;
 
 if tick % (room_speed * 3) == 0 then instance_create(-1000, 0, obj_ambulance);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Stage 7.7
+globalvar cars_left, achievements_vars;
+if stage == 7.7 {
+if achievements_vars[? 'cash'] != _stage_7_7_cash_last then stage = 7.9;
+
+if tick % (room_speed * 3) == 0 then instance_create(-1000, 0, obj_moneycar);
 }
 </string>
           </argument>
