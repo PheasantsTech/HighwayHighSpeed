@@ -475,7 +475,7 @@ if repeled and not dead and collision_rectangle( x - wh, y - hh, x + wh, y + hh,
           <argument>
             <kind>1</kind>
             <string>///DEBUG
-window_set_caption('Cars: ' + string(instance_number(obj_car)));
+if global.debug then window_set_caption('DEBUG ENABLED - Cars: ' + string(instance_number(obj_car)));
 </string>
           </argument>
         </arguments>
