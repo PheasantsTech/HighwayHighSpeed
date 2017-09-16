@@ -343,6 +343,7 @@ if car != noone { // We just got crashed
         else if other.object_index == obj_moneycar then return noone;  // moneycar shall not hurt us
         camera_shake(10, room_speed * 0.5);
         if cars_left &lt;= 0 { // this was our last car :-(
+            audio_play_sound(sound_trombone, 50, false);  // I love this comic effect
             music_stop();  // minute of silnce for our dear friend
         }
     }

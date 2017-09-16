@@ -67,6 +67,7 @@
     </sounds>
     <sound>sound\sound_coin_click</sound>
     <sound>sound\sound_click_fail</sound>
+    <sound>sound\sound_trombone</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="achievements">

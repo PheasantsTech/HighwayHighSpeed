@@ -364,8 +364,14 @@ if ( wanted_level &gt;= 1 and first_cops and not (global.slowmo_shader != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Send ambulance
-if (global.slowmo_shader == noone) then for (var i = 0; i &lt; 2; i++) if(irandom(3000) == 40) then instance_create((-1 * random(10000)) + 100, (-1 * random(10000)) + 100, obj_ambulance);
+            <string>/// Send ambulance and moneycar
+
+// Ambulance
+if (global.slowmo_shader == noone) then for (var i = 0; i &lt; 2; i++) if(irandom(3000) == 42) then instance_create((-1 * random(10000)) + 100, (-1 * random(10000)) + 100, obj_ambulance);
+
+// Moneycar
+if (global.slowmo_shader == noone) then for (var i = 0; i &lt; 2; i++) if(irandom(2500) == 42) then instance_create((-1 * random(10000)) + 100, (-1 * random(10000)) + 100, obj_moneycar);
+
 
 </string>
           </argument>

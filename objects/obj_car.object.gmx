@@ -179,7 +179,7 @@ x = line_spawner.x;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Die if there is an object on posssition
+            <string>/// Someone must die if there is an object on posssition
 var wh = sprite_width / 2;
 var hh = sprite_height / 2;
 
@@ -188,8 +188,14 @@ wh *= 1.2;
 
 var inst = collision_rectangle(x - wh, y - hh, x + wh, y + hh, obj_crashable, false, true);
 if inst != noone and inst.id != id {
- instance_destroy();
- exit;
+    /*
+    If this is a regular car then destroy itself.
+    If we are more then that (like ambulance or moneycar) then we shall survive (and destroy the car underneath)
+    */
+    if object_index == obj_car {
+        instance_destroy();
+        exit;
+    } else with inst instance_destroy();
 }
 </string>
           </argument>
