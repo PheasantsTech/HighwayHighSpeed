@@ -132,7 +132,16 @@ draw_set_font(font_trophies_text);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
-var txt = "Top score: " + string(achievements_vars[? 'top_score']) + ", total distance: " + string(achievements_vars[? 'total_distance']) +
+var cheating_txt;
+if achievements_vars[? 'cheat_used'] == 0 {
+    cheating_txt = "You are a fair player.";
+} else {
+    cheating_txt = "You are a cheater. This will never be forgiven.";
+}
+
+if achievements_vars[? 'cheat_42'] then cheating_txt += " You are also a very smart person.";
+
+var txt = cheating_txt + " Top score: " + string(achievements_vars[? 'top_score']) + ", total distance: " + string(achievements_vars[? 'total_distance']) +
           ", cars destroyed: " + string(achievements_vars[? 'cars_killed']) + ", cops disabled: " + string(achievements_vars[? 'cops_killed']) + 
           ", achivements: " + string(ds_map_size(achievements)) + ", coins: " + string(achievements_vars[? 'cash']) +
           ", played seconds: " + string(achievements_vars[? 'seconds_played']);

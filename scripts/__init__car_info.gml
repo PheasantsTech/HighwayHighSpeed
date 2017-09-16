@@ -32,8 +32,8 @@ car_info[? 'BEER TRUCK'] = m;
 
 m = ds_map_create();
 m[? 'name'] = "Space-Pirate ship";
-m[? 'desc'] = "Aggggrrrrrr";
-m[? 'spec'] = "Firrrreeeee";
+m[? 'desc'] = 'What says  Wikipedia about piracy? "Piracy is an act of robbery or criminal violence by ship or boat-borne attackers upon another ship or a coastal area, typically with the goal of stealing cargo and other valuable items or properties. Those who engage in acts of piracy are called pirates." So prepare your swords, load your favourite torrent site and launch your sailing ship to the space!';
+m[? 'spec'] = "Cannons are locked 'n loaded, waiting for your order to wipe out anything what stands in their way, captain!";
 m[? 'owned'] = false;
 m[? 'price'] = 200;
 m[? 'sprite'] = spr_player_pirate;

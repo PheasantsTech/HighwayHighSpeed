@@ -3,6 +3,8 @@ usage: instance_explode(inst)
 
 explodes instance
 */
+globalvar cars_killed;
+
 var inst = argument0;
 
 effect_create_above(ef_explosion, x, y, 2, make_colour_rgb(255,244,0));
@@ -10,6 +12,7 @@ audio_play_sound_on(inst.aem, sound_explosion, false, 50);
 
 inst.sprite_index = spr_noone;
 inst.dead = true;
+cars_killed ++;
 
 var insts_y = ds_map_create();
 

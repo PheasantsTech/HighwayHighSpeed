@@ -1,8 +1,8 @@
 globalvar petrol, petrol_max, cars_left, distance, cars_killed, wanted_level, wanted_level_max, music_enabled, debug, save_file, disable_power_buttons;
-globalvar slowmo_shader, info_message, queue_info_messages, music_current, music_current_index, disable_cars_and_petrol, skinset;
+globalvar slowmo_shader, info_message, queue_info_messages, music_current, music_current_index, disable_cars_and_petrol, skinset, explosive_touch;
 globalvar game_paused;
 
-debug = true;
+debug = false;
 
 petrol = 0;
 petrol_max = 1000;
@@ -22,6 +22,9 @@ music_current = noone;
 music_current_index = noone;
 skinset = "FUTURE"; // Known skinsets: FUTURE, CLASSIC
 game_paused = false;
+
+explosive_touch = false; // can be activated by a cheatcode
+autoshield = false; // can be activated by a cheatcode
 
 save_file = "saved.dat";
 

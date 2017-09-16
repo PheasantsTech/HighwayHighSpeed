@@ -698,11 +698,40 @@ _beer_truck_snd = audio_play_sound(sound_drink, 40, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Firreeee
-var snd = audio_play_sound(choose(snd_pir1, snd_pir2, snd_pir3, snd_pir4, snd_pir5, snd_pir6, snd_pir7, snd_pir8), 40, false);
-obj_player.pirate_cannon = 1;
-obj_player.alarm[4] = 1 * room_speed;
+            <string>///Mask as another car
+sound_play(sound_mask);
+if instance_number(obj_car) + instance_number(obj_police) == 0 then return noone;
 
+var inst;
+
+if instance_number(obj_police) &gt; 1 then inst = instance_find(obj_police, irandom(instance_number(obj_police)));  // Let's fool police by making us one of them
+else inst = instance_find(obj_car, irandom(instance_number(obj_car)));
+if inst == noone then exit;
+
+player_sprite = obj_player.sprite_index;
+player_image = obj_player.image_index;
+player_img_speed = obj_player.image_speed;
+
+var inst_sprite;
+if not inst.dead then inst_sprite = inst.sprite_index;
+else inst_sprite = inst.sprite_index - 1;
+var inst_iamge = inst.image_index;
+
+inst.sprite_index = player_sprite;
+inst.image_index = player_image;
+inst.vspeed /= 2;
+
+obj_player.sprite_index = inst_sprite;
+obj_player.image_index = inst_iamge;
+obj_player.fool_police = inst;
+
+obj_player.image_speed = 0;
+
+alarm[0] = 10 * room_speed;
+
+smoke_color = make_colour_rgb(193, 220, 137);
+effect_create_above(ef_smoke, obj_player.x, obj_player.y, 1, smoke_color);
+effect_create_above(ef_smoke, inst.x, inst.y, 1, smoke_color);
 </string>
           </argument>
         </arguments>

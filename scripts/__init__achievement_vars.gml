@@ -11,3 +11,6 @@ achievements_vars[? 'total_distance'] = 0;
 achievements_vars[? 'seconds_played'] = 0;
 achievements_vars[? 'car_type'] = "SPEEDER 5000";
 achievements_vars[? 'cash'] = 0;
+achievements_vars[? 'cheating_warning'] = false;  // user was warned about cheating
+achievements_vars[? 'cheat_used'] = 0;  // did user already cheated?
+achievements_vars[? 'cheat_42'] = false;  // cheat 42

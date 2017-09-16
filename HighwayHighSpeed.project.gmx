@@ -36,6 +36,7 @@
     <sound>sound\sound_shields_hit3</sound>
     <sound>sound\sound_car_start</sound>
     <sound>sound\sound_ice</sound>
+    <sound>sound\sound_ovation</sound>
     <sound>sound\sound_teleport</sound>
     <sounds name="screams">
       <sound>sound\sound_scream_1</sound>
@@ -101,6 +102,8 @@
       <sprite>sprites\spr_car_future_dead</sprite>
       <sprite>sprites\spr_ambulance_future</sprite>
       <sprite>sprites\spr_ambulance_future_dead</sprite>
+      <sprite>sprites\spr_moneycar_future</sprite>
+      <sprite>sprites\spr_moneycar_future_dead</sprite>
     </sprites>
     <sprites name="power buttons">
       <sprite>sprites\spr_btn_call_fuel</sprite>
@@ -138,10 +141,10 @@
     <sprite>sprites\spr_button_exit</sprite>
     <sprite>sprites\spr_btn_select</sprite>
     <sprite>sprites\spr_btn_buy</sprite>
-    <sprite>sprites\sprite73</sprite>
     <sprite>sprites\spr_btn_feedback</sprite>
     <sprite>sprites\spr_btn_skik_tutorial</sprite>
     <sprite>sprites\spr_btn_main_menu</sprite>
+    <sprite>sprites\spr_btn_cheat</sprite>
     <sprites name="cars_player">
       <sprite>sprites\spr_player_delorian</sprite>
       <sprite>sprites\spr_player_delorian_dead</sprite>
@@ -268,6 +271,7 @@
         <object>objects\obj_btn_start</object>
         <object>objects\obj_btn_end_game</object>
         <object>objects\obj_btn_main_menu</object>
+        <object>objects\obj_btn_cheatcode</object>
         <object>objects\obj_btn_skip_tutorial</object>
       </objects>
       <objects name="power_buttons">
